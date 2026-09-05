@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FabGlow AI Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg-light: #f9fafb;
+      --bg-card: #ffffff;
+      --accent: #ff6fb5;
+      --accent-dark: #d94f93;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --border-soft: #e5e7eb;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-light);
+      color: var(--text-main);
+    }
+    .page-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 16px 80px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 1.1rem;
+    }
+    .logo span {
+      color: var(--accent);
+    }
+    nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      color: var(--accent-dark);
+    }
+    .hero {
+      background: var(--bg-card);
+      padding: 40px 28px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border-soft);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .cta-btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta-btn:hover {
+      background: var(--accent-dark);
+    }
+    .section {
+      margin-top: 40px;
+    }
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border-soft);
+      margin-bottom: 20px;
+    }
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 20px 16px;
+      background: #ffffff;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .footer-links a {
+      margin-right: 12px;
+      text-decoration: none;
+      color: var(--text-muted);
+    }
+    .footer-links a:hover {
+      color: var(--accent-dark);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header>
+      <div class="logo">FabGlow <span>AI</span> Solutions</div>
+      <nav>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/shipping-policy">Shipping</a>
+        <a href="/refund-policy">Refunds</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>AI‑Powered Digital Products & Automation</h1>
+      <p>Helping entrepreneurs streamline their business with AI systems, digital artwork, and automated workflows.</p>
+      <a href="/contact" class="cta-btn">Work With Us</a>
+    </section>
+
+    <section class="section">
+      <h2>Our Services</h2>
+
+      <div class="card">
+        <h3>AI Automation Systems</h3>
+        <p>Custom workflows and automation tools designed to eliminate manual tasks and help your business scale.</p>
+      </div>
+
+      <div class="card">
+        <h3>Digital Artwork & Branding</h3>
+        <p>High‑quality AI‑generated artwork, branding assets, and digital visuals for creators and business owners.</p>
+      </div>
+
+      <div class="card">
+        <h3>Custom Digital Products</h3>
+        <p>Workbooks, templates, guides, and digital tools crafted to help entrepreneurs grow faster and work smarter.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why Choose FabGlow AI?</h2>
+      <div class="card">
+        <p>We combine creativity, automation, and AI innovation to deliver digital solutions that save time, reduce stress, and help your business shine.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© FabGlow AI Solutions, Plainfield, NJ</div>
+      <div class="footer-links">
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/shipping-policy">Shipping Policy</a>
+        <a href="/refund-policy">Refund Policy</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
