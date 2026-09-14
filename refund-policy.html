@@ -6,18 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg-light: #f9fafb;
-      --bg-card: #ffffff;
-      --accent: #ff6fb5;
-      --accent-dark: #d94f93;
-      --text-main: #1f2933;
-      --text-muted: #6b7280;
-      --border-soft: #e5e7eb;
+      --bg-light: #02030a;
+      --bg-card: #080b18;
+      --accent: #f72585;
+      --accent-dark: #21d4fd;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --border-soft: rgba(33, 212, 253, 0.30);
     }
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-light);
+      background:
+        radial-gradient(circle at 18% 8%, rgba(37, 99, 235, 0.20), transparent 32%),
+        radial-gradient(circle at 86% 18%, rgba(247, 37, 133, 0.18), transparent 30%),
+        var(--bg-light);
       color: var(--text-main);
     }
     .page-wrapper {
@@ -37,7 +40,10 @@
       font-size: 1.1rem;
     }
     .logo span {
-      color: var(--accent);
+      background: linear-gradient(90deg, #21d4fd 0%, #2563eb 35%, #7c3aed 65%, #f72585 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
     nav a {
       margin-left: 16px;
@@ -52,7 +58,7 @@
       background: var(--bg-card);
       border-radius: 16px;
       padding: 24px 24px 28px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.18), 0 0 18px rgba(247, 37, 133, 0.10);
       border: 1px solid var(--border-soft);
     }
     h1 {
@@ -81,7 +87,7 @@
     footer {
       border-top: 1px solid var(--border-soft);
       padding: 20px 16px;
-      background: #ffffff;
+      background: #050713;
       position: fixed;
       bottom: 0;
       left: 0;
