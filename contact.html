@@ -118,6 +118,38 @@
     .footer-links a:hover {
       color: var(--accent-dark);
     }
+    /* Consultation form */
+    .consultation { margin-top: 32px; padding-top: 12px; border-top: 1px solid var(--border-soft); }
+    .consultation label { display: block; margin-bottom: 8px; font-weight: 600; }
+    .consultation .field { margin: 20px 0; }
+    .consultation input, .consultation select, .consultation textarea {
+      box-sizing: border-box; width: 100%; padding: 12px; border: 1px solid var(--border-soft);
+      border-radius: 8px; background: var(--bg-light); color: var(--text-main); font: inherit;
+    }
+    .consultation textarea { min-height: 150px; resize: vertical; }
+    .consultation button {
+      max-width: 100%; padding: 12px 24px; border: 0; border-radius: 8px; background: var(--accent);
+      color: #fff; font: inherit; font-weight: 600; line-height: 1.5; cursor: pointer;
+    }
+    .consultation button:hover { background: #cb1469; }
+    .consultation :is(input, select, textarea, button, a):focus-visible {
+      outline: 2px solid var(--accent-dark); outline-offset: 3px;
+    }
+    .consultation .form-note { color: var(--text-muted); font-size: 0.95rem; }
+    .consultation a { color: var(--accent-dark); }
+    .consultation .honeypot { display: none; }
+    /* Keep the longer contact page clear of the footer on small screens. */
+    footer { position: static; }
+    @media (max-width: 640px) {
+      header { flex-wrap: wrap; gap: 16px; }
+      nav { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+      nav a { margin-left: 0; padding: 6px 0; }
+      .card { padding: 20px; }
+      .consultation button { width: 100%; }
+      .footer-inner { gap: 12px; }
+      .footer-links { display: flex; flex-wrap: wrap; gap: 12px; }
+      .footer-links a { margin-right: 0; }
+    }
   </style>
 </head>
 
@@ -160,6 +192,48 @@
         <li><a href="YOUR_TIKTOK_URL" target="_blank">TikTok</a></li>
         <li><a href="YOUR_FACEBOOK_URL" target="_blank">Facebook</a></li>
       </ul>
+
+      <section class="consultation" aria-labelledby="consultation-heading">
+        <h2 id="consultation-heading">Free Consultation Request Form</h2>
+        <p class="form-note">Tell us about your business and project. Fields marked * are required.</p>
+        <form name="free-consultation" method="POST" action="/consultation-thank-you" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="free-consultation" />
+          <p class="honeypot" aria-hidden="true">
+            <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </p>
+          <div class="field">
+            <label for="full-name">Full Name *</label>
+            <input id="full-name" name="full-name" type="text" autocomplete="name" maxlength="200" required pattern=".*\S.*" title="Enter your full name." />
+          </div>
+          <div class="field">
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required />
+          </div>
+          <div class="field">
+            <label for="business-name">Business Name (optional)</label>
+            <input id="business-name" name="business-name" type="text" autocomplete="organization" maxlength="200" />
+          </div>
+          <div class="field">
+            <label for="service">Service Interested In</label>
+            <select id="service" name="service">
+              <option value="">Select a service (optional)</option>
+              <option>AI Chatbots</option>
+              <option>AI Websites</option>
+              <option>CRM Automation</option>
+              <option>Email Marketing</option>
+              <option>AI Video Spokespersons</option>
+              <option>Business Automation</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="project">Tell Us About Your Project *</label>
+            <textarea id="project" name="project" rows="6" maxlength="10000" required></textarea>
+          </div>
+          <p class="form-note">Please avoid including passwords, payment details, or other sensitive information. <a href="/privacy-policy">Privacy Policy</a></p>
+          <div class="field"><button type="submit">Request My Free Consultation</button></div>
+        </form>
+      </section>
     </main>
   </div>
 
