@@ -3,137 +3,72 @@
 <head>
   <meta name="p:domain_verify" content="2442b63386f91d7a2dee9ff67b046fc0"/>
   <meta charset="UTF-8" />
-  <title>FabGlow AI Solutions</title>
+  <title>FabGlow | AI-Powered Creative Empire</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg-light: #02030a;
-      --bg-card: #080b18;
-      --accent: #f72585;
-      --accent-dark: #21d4fd;
-      --text-main: #f8fafc;
-      --text-muted: #cbd5e1;
-      --border-soft: rgba(33, 212, 253, 0.30);
+    :root { --bg-light: #07090c; --bg-card: #0b1018; --accent: #e22cab; --accent-dark: #00d7ed; --text-main: #e3fcff; --text-muted: #acb4c4; --border-soft: #22303c; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg-light); color: var(--text-main); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+    a { color: var(--accent-dark); }
+    a:focus-visible { outline: 3px solid #00d7ed; outline-offset: 5px; }
+    header { min-height: 72px; padding: 8px 28px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #1b1e25; background: #080a0c; }
+    .logo { display: inline-flex; flex-shrink: 0; }
+    .logo img { display: block; width: 48px; height: 48px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 12px 30px; }
+    nav a { color: #a7adbc; font-size: .875rem; text-decoration: none; padding: 8px 0; }
+    nav a:hover { color: #00d7ed; }
+    nav a[href="/contact"] { background: #00d7ed; color: #05151b; border-radius: 10px; padding: 9px 22px; font-weight: 700; }
+    .hero { position: relative; isolation: isolate; text-align: center; padding: 62px 24px 74px; overflow: hidden; background: radial-gradient(ellipse at 50% 63%, #00323c66, transparent 48%), #060a0e; }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, transparent 12%, #060a0e 33%, #060a0e 76%, transparent 92%), url('/assets/fabglow-gallery.jpg') center top / cover no-repeat; opacity: .95; pointer-events: none; }
+    .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(transparent 60%, #07090c), radial-gradient(ellipse at 50% 55%, #00e0ff12, transparent 65%); pointer-events: none; }
+    .hero-logo { display: block; width: clamp(230px, 23vw, 330px); height: auto; margin: 0 auto 30px; }
+    .hero h1 { font-size: clamp(2.5rem, 7.6vw, 6.4rem); line-height: 1.04; font-weight: 800; letter-spacing: -.035em; margin: 0 auto 24px; text-shadow: 0 0 26px #00d8ed66; }
+    .hero h1 span { display: block; color: #00d7ed; }
+    .hero p { max-width: 780px; margin: 0 auto 28px; font-size: clamp(1rem, 1.7vw, 1.2rem); color: #b0b6c6; }
+    .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+    .cta-btn { display: inline-block; padding: 12px 24px; border: 1px solid #00d7ed; border-radius: 9px; text-decoration: none; font-weight: 700; color: #05151b; background: #00d7ed; }
+    .cta-btn:hover { background: #85f3ff; }
+    .cta-secondary { background: #0a101be6; color: #d8faff; }
+    .cta-secondary:hover { background: #192b3a; }
+    .section { max-width: 1120px; margin: 0 auto; padding: 44px 24px 0; }
+    .section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 24px; }
+    .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .card { background: linear-gradient(135deg, #101724, #0a0d14); border: 1px solid #263348; border-radius: 12px; padding: 26px; }
+    .card h3 { margin: 0 0 12px; }
+    .card p { margin: 0; color: var(--text-muted); }
+    .service-link { display: block; color: #54e6fa; text-decoration: none; transition: border-color .2s, transform .2s; }
+    .service-link h3 { text-decoration: underline; text-underline-offset: 5px; }
+    .service-link:hover { border-color: #e22cab; transform: translateY(-3px); }
+    main { padding-bottom: 70px; }
+    footer { border-top: 1px solid #22303c; background: #080b10; padding: 28px 24px; color: var(--text-muted); font-size: .85rem; }
+    .footer-inner { max-width: 1072px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 10px 16px; }
+    .footer-links a { color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: #00d7ed; }
+    @media (max-width: 640px) {
+      header { padding: 12px 16px; align-items: flex-start; gap: 16px; }
+      nav { gap: 4px 16px; }
+      nav a { font-size: .8rem; }
+      nav a[href="/contact"] { padding: 6px 12px; }
+      .hero { padding: 40px 16px 50px; }
+      .hero-logo { width: 230px; margin-bottom: 24px; }
+      .hero h1 { font-size: clamp(2.2rem, 8.5vw, 3.4rem); }
+      .hero-actions { flex-direction: column; }
+      .service-grid { grid-template-columns: 1fr; }
+      .section { padding: 32px 16px 0; }
     }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 18% 8%, rgba(37, 99, 235, 0.20), transparent 32%),
-        radial-gradient(circle at 86% 18%, rgba(247, 37, 133, 0.18), transparent 30%),
-        var(--bg-light);
-      color: var(--text-main);
-    }
-    .page-wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 32px 16px 80px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
-    }
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      font-size: 1.1rem;
-    }
-    .logo span {
-      background: linear-gradient(90deg, #21d4fd 0%, #2563eb 35%, #7c3aed 65%, #f72585 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    nav a {
-      margin-left: 16px;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-    nav a:hover {
-      color: var(--accent-dark);
-    }
-    .hero {
-      background: var(--bg-card);
-      padding: 40px 28px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(37, 99, 235, 0.18), 0 0 18px rgba(247, 37, 133, 0.10);
-      border: 1px solid var(--border-soft);
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .hero h1 {
-      font-size: 2rem;
-      margin-bottom: 12px;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-    .cta-btn {
-      background: var(--accent);
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .cta-btn:hover {
-      background: var(--accent-dark);
-    }
-    .section {
-      margin-top: 40px;
-    }
-    .section h2 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-    }
-    .card {
-      background: var(--bg-card);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 0 30px rgba(37, 99, 235, 0.18), 0 0 18px rgba(247, 37, 133, 0.10);
-      border: 1px solid var(--border-soft);
-      margin-bottom: 20px;
-    }
-    footer {
-      border-top: 1px solid var(--border-soft);
-      padding: 20px 16px;
-      background: #050713;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-    }
-    .footer-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .footer-links a {
-      margin-right: 12px;
-      text-decoration: none;
-      color: var(--text-muted);
-    }
-    .footer-links a:hover {
-      color: var(--accent-dark);
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .service-link { transition: none; } }
   </style>
 </head>
 
 <body>
   <div class="page-wrapper">
     <header>
-      <div class="logo">FabGlow <span>AI</span> Solutions</div>
-      <nav>
+      <a class="logo" href="/" aria-label="FabGlow AI Solutions home"><img src="/assets/fabglow-logo.jpeg" alt="FabGlow AI Solutions" width="512" height="512" /></a>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="#services">Services</a>
         <a href="/about">About</a>
         <a href="/blog">Blog</a>
         <a href="/contact">Contact</a>
@@ -142,43 +77,50 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <h1>AI‑Powered Digital Products & Automation</h1>
-      <p>Helping entrepreneurs streamline their business with AI systems, digital artwork, and automated workflows.</p>
-      <a href="/contact" class="cta-btn">Work With Us</a>
+    <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <img class="hero-logo" src="/assets/fabglow-logo.jpeg" alt="FabGlow AI Solutions — neon F and circuit-brain emblem" width="512" height="512" fetchpriority="high" />
+      <h1 id="hero-heading">AI-Powered <span>Creative Empire</span></h1>
+      <p>Digital art and cutting-edge AI marketing for your business. Welcome to the future of creative commerce.</p>
+      <div class="hero-actions">
+        <a href="/contact#consultation-heading" class="cta-btn">Request a Free Consultation</a>
+        <a href="#services" class="cta-btn cta-secondary">Explore Our Services</a>
+      </div>
     </section>
 
-    <section class="section">
-      <h2>Our Services</h2>
+    <section class="section" id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Our Services</h2>
+      <div class="service-grid">
 
       <div class="card">
         <h3>AI Automation Systems</h3>
         <p>Custom workflows and automation tools designed to eliminate manual tasks and help your business scale.</p>
       </div>
 
-      <div class="card">
-        <h3><a href="/business-automation" style="color: var(--accent-dark);">Business Automation</a></h3>
+      <a href="/business-automation" class="card service-link">
+        <h3>Business Automation</h3>
         <p>Automate repetitive tasks, streamline workflows, and improve productivity with customized AI-powered business automation solutions.</p>
-      </div>
+      </a>
 
       <div class="card">
         <h3>Digital Artwork & Branding</h3>
         <p>High‑quality AI‑generated artwork, branding assets, and digital visuals for creators and business owners.</p>
       </div>
 
-      <div class="card">
-        <h3><a href="/ai-video-spokespersons" style="color: var(--accent-dark);">AI Video Spokespersons</a></h3>
+      <a href="/ai-video-spokespersons" class="card service-link">
+        <h3>AI Video Spokespersons</h3>
         <p>Professional AI-generated spokesperson videos for your products, services, website, and social media.</p>
-      </div>
+      </a>
 
-      <a href="/email-marketing" class="card" style="display: block; color: inherit; text-decoration: none;">
-        <h3 style="color: var(--accent-dark); text-decoration: underline;">Email Marketing</h3>
+      <a href="/email-marketing" class="card service-link">
+        <h3>Email Marketing</h3>
         <p>Grow your business with automated email campaigns, personalized customer communication, and intelligent follow-up systems.</p>
       </a>
 
       <div class="card">
         <h3>Custom Digital Products</h3>
         <p>Workbooks, templates, guides, and digital tools crafted to help entrepreneurs grow faster and work smarter.</p>
+      </div>
       </div>
     </section>
 
@@ -188,6 +130,7 @@
         <p>We combine creativity, automation, and AI innovation to deliver digital solutions that save time, reduce stress, and help your business shine.</p>
       </div>
     </section>
+    </main>
   </div>
 
   <footer>
